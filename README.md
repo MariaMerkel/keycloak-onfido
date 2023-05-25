@@ -15,7 +15,7 @@ Upon installation of the SPI, create an authentication flow that contains one re
 ### Report Type Considerations
 The "photo" and "video" report types can fall back to manual review by Onfido, which will take longer than the HTTP timeout and would then cause authentications to fail. Instead of "photo", consider using "photo_fully_auto" if your Onfido contract allows. The "video" report type can also take relatively long to process even if it is processed fully automatically, which can (but usually won't) exceed the HTTP timeout.
 
-Different report types have different security considerations. Generally, "video" is more secure than "motion" and "motion" is more secure than "video". Onfido does not officially support any report types for the purpose of authenticating users (these products are only officially supported for identity verification in a customer due diligence context), so whether this SPI is suitable for your use case depends on your risk appetite.
+Different report types have different security considerations. Generally, "video" is more secure than "motion" and "motion" is more secure than "photo". Onfido does not officially support any report types for the purpose of authenticating users (these products are only officially supported for identity verification in a customer due diligence context), so whether this SPI is suitable for your use case depends on your risk appetite.
 
 ## User Mapping
 This SPI uses a custom user attribute, "onfido_applicant_id", to store the Onfido applicant ID.
